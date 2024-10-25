@@ -21,7 +21,7 @@ const getFakultasById = async (req, res) => {
     }
 }
 
-const cretaeFakultas = async (req, res) => {
+const createFakultas = async (req, res) => {
     const fakultas = new Fakultas({
         nama: req.body.nama,
         singkatan: req.body.singkatan,
@@ -70,7 +70,7 @@ const deleteFakultas = async (req, res) => {
 
 module.exports = {
     getAllFakultas,
-    cretaeFakultas,
+    createFakultas,
     getFakultasById,
     updateFakultas,
     deleteFakultas,

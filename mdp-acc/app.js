@@ -11,6 +11,7 @@ var prodiRouter = require('./app_server/routes/prodi');
 var app = express();
 const expressLayout = require("express-ejs-layouts"); // import modul express-ejs-layout
 const fakultasRouter = require("./app_api/routes/fakultas");
+const ProdiRouter = require("./app_api/routes/prodi");
 // view engine setup
 app.set('views', path.join(__dirname,'app_server','views'));
 app.set('view engine', 'ejs');
@@ -26,6 +27,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/prodi',prodiRouter);
 app.use("/api/fakultas", fakultasRouter);
+app.use("/api/prodi", ProdiRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
