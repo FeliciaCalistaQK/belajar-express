@@ -1,0 +1,15 @@
+langkah2 instal
+1. npm install -g express-generator
+2. express nama-aplikasi
+3. express --view=ejs nama-aplikasi
+4. cd nama-aplikasi
+5. npm install
+6. npm start
+7. npm install --save-dev nodemon
+edit package.json dibagian script tambah "dev":"nodemon ./bin/www"
+8. npm run dev
+9. npm install express-ejs-layouts
+tambah const expressLayout=require("express-ejs-layouts") di app.js
+tambah app.use(expressLayout) di app.js
+10. npm install mongoose
+
