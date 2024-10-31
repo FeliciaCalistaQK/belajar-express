@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const connectDB = require("./app_api/models/db");
 
+const cors = require('cors')
 var indexRouter = require('./app_server/routes/index');
 var usersRouter = require('./app_server/routes/users');
 var prodiRouter = require('./app_server/routes/prodi');   
@@ -16,6 +17,7 @@ const ProdiRouter = require("./app_api/routes/prodi");
 app.set('views', path.join(__dirname,'app_server','views'));
 app.set('view engine', 'ejs');
 
+app.use(cors())
 app.use(logger('dev'));1
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
