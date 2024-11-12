@@ -1,37 +1,24 @@
-const prodi =(req, res)=>{
-    const prodi = [
-        { 
-            namaProdi: "Sistem Informasi",
-            fakultas: "FIKR",
-            singkatan: "SI"
-        },
-        {
-            namaProdi: "Informatika",
-            fakultas: "FIKR",
-            singkatan: "IF"
-        },
-        {
-            namaProdi: "Teknik Elektro",
-            fakultas: "FIKR",
-            singkatan: "TE"
-        },
-        {
-            namaProdi: "Manajmen Informatika",
-            fakultas: "FIKR",
-            singkatan: "MI"
-        },
-        {
-            namaProdi: "Manajemen",
-            fakultas: "FEB",
-            singkatan: "MJ"
-        },
-        {
-            namaProdi: "Akuntansi",
-            fakultas: "FEB",
-            singkatan: "AK"
-        },
+const axios = require("axios");
 
-    ];
-    res.render("prodi", {title: 'Daftar Prodi', prodi,layout:'main'});
-}
-module.exports ={prodi}
+const index = async (req, res) => {
+    try{
+
+        const response = await axios.get(
+            "https://crud-express-seven.vercel.app/api/prodi"
+        );
+        const fakultas = response.data;
+
+        res.render("prodi", {
+            title: "Halaman Prodi",
+            prodi,
+            layout: "main",
+        });
+
+    } catch (error) {
+
+        console.error(error.message);
+        res.status(500).send("Gagal mendapatkan data prodi dari API");
+    }
+};
+
+module.exports = {index};
