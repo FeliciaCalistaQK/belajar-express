@@ -6,7 +6,7 @@ const index = async (req, res) => {
         const response = await axios.get(
             "https://crud-express-seven.vercel.app/api/prodi"
         );
-        const fakultas = response.data;
+        const prodi = response.data;
 
         res.render("prodi", {
             title: "Halaman Prodi",
