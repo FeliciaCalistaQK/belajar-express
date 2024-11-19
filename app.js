@@ -10,6 +10,7 @@ var indexRouter = require('./app_server/routes/index');
 // var prodiRouter = require("./app_server/routes/prodi");
 var usersRouter = require('./app_server/routes/users');
 const fakultasRouterApi = require("./app_api/routes/fakultas")
+const mahasiswaRouterApi = require("./app_api/routes/mahasiswa");
 
 // const prodiPageRouter = require('./app_server/routes/prodi');
 const fakultasRouter = require("./app_server/routes/fakultas");
@@ -38,6 +39,7 @@ app.use('/prodi', prodiRouter);
 app.use("/api/fakultas", fakultasRouterApi);
 app.use("/api/prodi", prodiRouterApi);
 app.use("/api/auth",authRouterApi);
+app.use("/api/mahasiswa", mahasiswaRouterApi);
 connectDB();
 
 // catch 404 and forward to error handler
